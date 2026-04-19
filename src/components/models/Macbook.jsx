@@ -16,6 +16,8 @@ import * as THREE from 'three';
 export function MacbookModel(props) {
   const { nodes, materials, scene } = useGLTF('/models/macbook-transformed.glb')
   const texture = useTexture('/screen.png')
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
 
   useEffect(() => {
     if (!props.color) return;
