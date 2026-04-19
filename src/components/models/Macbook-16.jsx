@@ -22,11 +22,13 @@ export function Macbook16Model(props) {
   useEffect(() => {
     if (!props.color) return;
     scene.traverse((child) => {
-      if (child.isMesh && !noChangeParts.includes(child.name)) {
-        child.material.color.set(new THREE.Color(props.color));
-      }
+      if (!child.isMesh) return;
+      if (noChangeParts.includes(child.name)) return;
+      child.material.transparent = true;
+      child.material.color.set(new THREE.Color(props.color));
+      child.material.needsUpdate = true;
     });
-  }, [props.color]);
+  }, [props.color, scene]);
   
   return (
     <group {...props} dispose={null}>
@@ -47,7 +49,7 @@ export function Macbook16Model(props) {
       <mesh geometry={nodes.Object_82.geometry} material={materials.gMtYExgrEUqPfln} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_96.geometry} material={materials.PaletteMaterial003} rotation={[Math.PI / 2, 0, 0]} />
       <mesh geometry={nodes.Object_107.geometry} material={materials.JvMFZolVCdpPqjj} rotation={[Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_123.geometry} material={materials.sfCQkHOWyrsLmor} rotation={[Math.PI / 2, 0, 0]}>
+      <mesh geometry={nodes.Object_123.geometry} rotation={[Math.PI / 2, 0, 0]}>
         <meshBasicMaterial map={texture} color={"#95a0f2"} />
       </mesh>
       <mesh geometry={nodes.Object_127.geometry} material={materials.ZCDwChwkbBfITSW} rotation={[Math.PI / 2, 0, 0]} />
