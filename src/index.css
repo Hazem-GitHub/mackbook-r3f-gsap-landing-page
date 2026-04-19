@@ -173,7 +173,7 @@ body {
       @apply relative z-10 bg-primary text-white py-2 px-6 mt-10 mb-5 rounded-full font-semibold text-lg cursor-pointer transition-all duration-300 ease-in-out;
 
       @variant lg {
-        @apply mt-0;
+        @apply -mt-10;
       }
       @variant hover {
         @apply bg-white text-black;
@@ -190,9 +190,9 @@ body {
   }
 
   #product-viewer {
-    @apply container relative min-h-[95vh] mx-auto px-5 mt-60;
+    @apply container relative min-h-[95vh] mx-auto px-5 mt-40;
     @variant 2xl {
-      @apply px-0;
+      @apply px-0 mt-60;
     }
 
     h2 {
@@ -246,10 +246,10 @@ body {
   }
 
   #showcase {
-    @apply relative;
+    @apply relative overflow-hidden !max-h-none;
 
     .media {
-      @apply relative;
+      @apply relative max-h-screen;
       @variant lg {
         @apply overflow-hidden;
       }
@@ -259,9 +259,9 @@ body {
       }
 
       .mask {
-        @apply absolute h-full top-0;
+        @apply absolute w-full min-h-full top-8;
         @variant lg {
-          @apply -top-20;
+          @apply top-[2.5%];
         }
         @variant xl {
           @apply top-0;
@@ -286,7 +286,7 @@ body {
     .content {
       @apply relative z-10 my-5 bg-black font-semibold text-xl text-dark-100;
       @variant lg {
-        @apply -mt-40 opacity-0;
+        @apply mt-10 opacity-0;
       }
 
       .wrapper {
