@@ -7,6 +7,8 @@ import { useMediaQuery } from "react-responsive";
 import { Group } from "three";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import * as THREE from "three";
+import type { Object3DEventMap } from "three";
 
 const ModelSwitcher = () => {
     const { color, size } = useMacBookStore();
@@ -39,12 +41,12 @@ const ModelSwitcher = () => {
     const ANIMATION_DURATION = 1;
     const OFFSET_DISTANCE = 5;
 
-    const fadeMeshes = (group, opacity) => {
+    const fadeMeshes = (group: Group<Object3DEventMap> | null, opacity: number) => {
         if(!group) return;
         group.traverse((child) => {
-            if (child.isMesh) {
-                child.material.transparent = true;
-                gsap.to(child.material, {
+            if ((child as THREE.Mesh<THREE.BufferGeometry, THREE.MeshStandardMaterial>).isMesh) {
+                (child as THREE.Mesh<THREE.BufferGeometry, THREE.MeshStandardMaterial>).material.transparent = true;
+                gsap.to((child as THREE.Mesh<THREE.BufferGeometry, THREE.MeshStandardMaterial>).material, {
                     opacity: opacity,
                     duration: ANIMATION_DURATION,
                     ease: "power2.inOut",
@@ -53,7 +55,7 @@ const ModelSwitcher = () => {
          })
     }
 
-    const moveGroup = (group, x) => {
+    const moveGroup = (group: Group<Object3DEventMap> | null, x: number) => {
         if(!group) return;
         gsap.to(group.position, {
             x: x,
