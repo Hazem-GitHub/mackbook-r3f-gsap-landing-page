@@ -37,7 +37,7 @@ const Hero = () => {
                 <h1>MacBook Pro</h1>
                 <img src="/title.png" alt="MacBook Pro Title" />
             </div>
-            <video ref={videoRef} src="/videos/hero.mp4" muted />
+            <video ref={videoRef} src="/videos/hero.mp4" muted playsInline autoPlay />
             <button>Buy</button>
             <p>From $1999 or $166.58/mo. for 12 mo.</p>
             <p>AppleCare+ for $99 or $8.25/mo. for 12 mo.</p>
