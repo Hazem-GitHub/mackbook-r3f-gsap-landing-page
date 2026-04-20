@@ -48,7 +48,7 @@ const ModelScroll = () => {
         // SYNC THE FEATURE CONTENT
         const timeline = gsap.timeline({
             scrollTrigger: {
-                trigger: '#f-canvas',
+                trigger: '.features-stage',
                 start: 'top center',
                 end: 'bottom center',
                 scrub: 0.5,
@@ -57,26 +57,32 @@ const ModelScroll = () => {
 
         // 3D SPIN
         if(groupRef.current) {
-            modelTimeline.to(groupRef.current.rotation, { y: Math.PI * 2, ease: 'power1.inOut'})
+            modelTimeline.to(groupRef.current.rotation, { y: Math.PI / 8, ease: 'power1.inOut'})
+            modelTimeline.to(groupRef.current.rotation, { y: -Math.PI / 8, ease: 'power1.inOut'})
         }
 
         // Content & Texture Sync
         timeline
             .call(() => setTexture('/videos/feature-1.mp4'))
-            .to('.box1', { opacity: 1, y: 0, delay: 0 })
-
+            .to('.box1', { opacity: 1, y: 0 })
             .call(() => setTexture('/videos/feature-2.mp4'))
+            .to('.box1', { opacity: isMobile ? 0 : 1 })
             .to('.box2', { opacity: 1, y: 0 })
 
             .call(() => setTexture('/videos/feature-3.mp4'))
+            .to('.box2', { opacity: isMobile ? 0 : 1 })
             .to('.box3', { opacity: 1, y: 0 })
 
             .call(() => setTexture('/videos/feature-4.mp4'))
+            .to('.box3', { opacity: isMobile ? 0 : 1 })
             .to('.box4', { opacity: 1, y: 0})
 
             .call(() => setTexture('/videos/feature-5.mp4'))
+            .to('.box4', { opacity: isMobile ? 0 : 1 })
             .to('.box5', { opacity: 1, y: 0 })
-    }, {dependencies: [], revertOnUpdate: true});
+            .to('.box5', { opacity: isMobile ? 0 : 1 })
+        
+    }, {dependencies: [isMobile], revertOnUpdate: true});
 
     return (
         <group ref={groupRef}>
