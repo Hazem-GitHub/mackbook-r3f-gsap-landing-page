@@ -51,7 +51,7 @@ const ModelScroll = () => {
                 trigger: '.features-stage',
                 start: 'top center',
                 end: 'bottom center',
-                scrub: 0.5,
+                scrub: isMobile ? 5 : 1,
             }
         })
 

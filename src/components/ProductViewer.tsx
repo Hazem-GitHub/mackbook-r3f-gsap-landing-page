@@ -25,22 +25,10 @@ const ProductViewer = () => {
                   size === "14" ? (
                       <div className="flex-center flex-wrap gap-2">
                             <p>14-inch Liquid Retina XDR display</p>
-                            <p>2560 x 1600 resolution</p>
-                            <p>600 nits max brightness</p>
-                            <p>120 Hz refresh rate</p>
-                            <p>1000 nits peak brightness</p>
-                            <p>ProMotion technology</p>
-                            <p>True Tone technology</p>
                       </div>
                   ) : (
                       <div className="flex-center flex-wrap gap-2">
                             <p>16-inch OLED display</p>
-                            <p>3024 x 1964 resolution</p>
-                            <p>800 nits max brightness</p>
-                            <p>120 Hz refresh rate</p>
-                            <p>1000 nits peak brightness</p>
-                            <p>P3 wide color gamut</p>
-                            <p>Dolby Vision HDR content support</p>
                       </div>
                   )
               }
