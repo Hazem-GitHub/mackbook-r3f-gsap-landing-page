@@ -73,12 +73,12 @@ The project is structured around a **component-driven architecture**, where each
 ```text
 src/
 │
-├── components/ # Reusable UI components
-├── sections/ # Page sections (Hero, Features, etc.)
-├── animations/ # GSAP timelines and configs
-├── hooks/ # Custom hooks (e.g., useScrollAnimation)
-├── styles/ # Global and modular styles
-└── pages/ or app/ # Next.js routing
+├── components/ # Landing page components (Hero, Features, etc.)
+├── constants/ # Static data used
+├── store/ # Zustand state management store
+├── App.tsx/ # Application file that hold rendered components
+├── index.css/ # Used styles and reusable classes definitions
+└── main.tsx/ # Root file to render the Application
 ```
 
 ---
