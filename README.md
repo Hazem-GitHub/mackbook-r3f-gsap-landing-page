@@ -1,75 +1,110 @@
-# React + TypeScript + Vite
+# 🍏 MacBook GSAP Interactive Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An immersive, Apple-inspired interactive landing page built with modern frontend technologies, focusing on **scroll-driven storytelling**, **smooth animations**, and **high-performance UI rendering**.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** https://macbook-r3f-gsap.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📸 Preview
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+![Project Screenshot](./public/screenshot.png)
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## ✨ Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project is a **cinematic product experience** inspired by Apple's product pages, designed to showcase advanced frontend engineering techniques using **GSAP animations and smooth scroll interactions**.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+It delivers a **visually rich, performance-optimized UI** that reacts seamlessly to user scroll and interaction, mimicking premium product storytelling experiences.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The landing page highlights a MacBook-style product with:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Scroll-based transitions
+- Animated text reveals
+- Section-based storytelling
+- Smooth motion and easing effects
+
+---
+
+## 🚀 Key Features
+
+- 🎬 **Scroll-driven animations** powered by GSAP
+- ⚡ **High-performance rendering** with optimized animation timelines
+- 🧭 **Section-based storytelling UX**
+- 🎯 **Pixel-perfect Apple-inspired UI**
+- 📱 **Responsive design across devices**
+- 🧩 Modular and scalable component structure
+
+---
+
+## 🛠️ Tech Stack
+
+- **React / Next.js**
+- **GSAP (GreenSock Animation Platform)**
+- **Three.js / React Three Fiber** _(if applicable)_
+- **Tailwind CSS / CSS Modules**
+- **Vercel (Deployment)**
+
+---
+
+## 🧠 Architecture & Approach
+
+The project is structured around a **component-driven architecture**, where each section of the page represents a storytelling block.
+
+### Key Concepts:
+
+- **GSAP Timelines**
+  - Centralized animation control
+  - Smooth sequencing between sections
+
+- **ScrollTrigger Integration**
+  - Sync animations with scroll position
+  - Pinning and scrubbing effects
+
+- **Separation of Concerns**
+  - UI components isolated from animation logic
+  - Reusable animation hooks/utilities
+
+---
+
+## 📂 Project Structure
+
+src/
+│
+├── components/ # Reusable UI components
+├── sections/ # Page sections (Hero, Features, etc.)
+├── animations/ # GSAP timelines and configs
+├── hooks/ # Custom hooks (e.g., useScrollAnimation)
+├── styles/ # Global and modular styles
+└── pages/ or app/ # Next.js routing
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Hazem-GitHub/mackbook-r3f-gsap-landing-page.git
+cd mackbook-r3f-gsap-landing-page
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3. Run development server
+
+```bash
+npm run dev
+```
+
+### 4. Build for production
+
+```bash
+npm run build
+npm start
 ```
