@@ -8,7 +8,7 @@ An immersive, Apple-inspired interactive landing page built with modern frontend
 
 ## 📸 Preview
 
-![Project Screenshot](./public/screenshot.png)
+![Project Screenshot](./public/screenshot.webp)
 
 ---
 

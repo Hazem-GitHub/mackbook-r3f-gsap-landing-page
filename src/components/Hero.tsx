@@ -35,7 +35,7 @@ const Hero = () => {
         <section id="hero">
             <div>
                 <h1>MacBook Pro</h1>
-                <img src="/title.png" alt="MacBook Pro Title" />
+                <img src="/title.webp" alt="MacBook Pro Title" />
             </div>
             <video ref={videoRef} src="/videos/hero.mp4" muted playsInline autoPlay />
             <button>Buy</button>
